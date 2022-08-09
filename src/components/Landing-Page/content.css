@@ -1,0 +1,30 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-title {
+    font-size: 3rem;
+    margin: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.content-description {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    color: #033;
+}
+
+.content-btn {
+    width: 11rem;
+    height: 3rem;
+    margin: 3rem;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #aff;
+    border: 2px solid #055;
+}
