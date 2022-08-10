@@ -1,5 +1,6 @@
 import React from 'react'
 import "./login.css"
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -18,7 +19,7 @@ const Login = () => {
 
             <div className='login-desc'>Or</div>
             <div className='login-desc'>New user?</div>
-            <div className='login-desc'>Register <span className='login-link'> Here </span></div>
+            <div className='login-desc'>Register <Link to="/signup" className='login-link'> Here </Link></div>
 
         </div>
     </div>
