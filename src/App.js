@@ -1,6 +1,5 @@
-import { LandingPage, HomePage, LoginPage } from "./pages";
-import { Routes, Route } from "react-router-dom"
-import SignupPage from "./pages/SignupPage";
+import { LandingPage, HomePage, LoginPage, SignupPage } from "./pages";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
