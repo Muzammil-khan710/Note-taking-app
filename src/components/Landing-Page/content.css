@@ -27,4 +27,9 @@
     font-size: 1.2rem;
     background-color: #aff;
     border: 2px solid #055;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
 }
