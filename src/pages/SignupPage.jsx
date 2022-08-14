@@ -1,6 +1,5 @@
 import React from 'react'
-import { Navbar } from '../components/Navbar/Navbar'
-import { Signup } from '../components/Signup/Signup'
+import { Navbar, Signup } from '../components'
 
 const SignupPage = () => {
   return (

@@ -13,4 +13,4 @@ const Content = () => {
   )
 }
 
-export default Content
+export { Content }

@@ -1,6 +1,5 @@
 import React from 'react'
-import Content from '../components/Landing-Page/Content'
-import { Navbar } from '../components/Navbar/Navbar'
+import { Navbar, Content } from '../components' 
 
 const LandingPage = () => {
   return (
