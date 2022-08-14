@@ -1,0 +1,45 @@
+:root {
+    --light-blue: #89ebed;
+    --light-yellow: #fff8c6;
+    --light-pink: #ffc0cb;
+    --light-purple: #ddd6f3;
+    --light-orange: #fad6c4;
+}
+
+.note-editor {
+    width: auto;
+    flex-direction: column;
+    display: flex;
+    margin: 10rem;
+    border: 1px solid black;
+    border-radius: 8px;    
+    padding: 1rem;
+    background-color: #f7f7f7;
+}
+
+.note-title {
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.btn-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.btn {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+
+.select  {
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+}
