@@ -1,3 +1,8 @@
+:root {
+    --light--green: #aff;
+    --dark--green: #055;
+}
+
 .content-container {
     display: flex;
     flex-direction: column;
@@ -25,8 +30,8 @@
     margin: 3rem;
     border-radius: 10px;
     font-size: 1.2rem;
-    background-color: #aff;
-    border: 2px solid #055;
+    background-color: var(--light--green);
+    border: 2px solid var(--dark--green);
     text-decoration: none;
 }
 
