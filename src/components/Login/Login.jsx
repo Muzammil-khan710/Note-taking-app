@@ -14,7 +14,7 @@ const Login = () => {
     <div>
         <div className='login-container'>
             <div className='login-title'>Login</div>
-            <form  className='form-container'>
+            <div className='form-container'>
                 <label htmlFor="">Email</label>
                 <input className='form-input' type="email" placeholder='Enter your Email'value={email}  onChange={ e => setEmail(e.target.value) } />
 
@@ -22,7 +22,7 @@ const Login = () => {
                 <input className='form-input' type="password" placeholder='Enter your password' value={password} onChange={ e => setPassword(e.target.value)}/>
 
                 <button className='form-btn' onClick={(e) =>  login(e,email,password)}> Login</button>
-            </form>
+            </div>
 
             <button onClick={() => {setEmail("adarshbalika@gmail.com"); setPassword("adarshBalika123")}}>Test credentials</button>
   

@@ -16,13 +16,14 @@ const AuthProvider = ({children}) => {
     : null,)
 
     const login = async (e, email, password) => {
+      e.preventDefault()
 
       try {
         const {data} = await axios.post(`/api/auth/login`, {
           email,
           password
         });
-     
+        
         setUser(data.foundUser)
         setToken(data.encodedToken)
         localStorage.setItem("token", JSON.stringify(data.encodedToken))
@@ -33,11 +34,26 @@ const AuthProvider = ({children}) => {
       }
     };
 
+    const signup = async (e, newuser) => {
+      e.preventDefault()
+
+     try {
+        const {data}  = await axios.post(`/api/auth/signup`, newuser )
+        setUser(data.createdUser)
+        setToken(data.encodedToken)
+        localStorage.setItem("token", JSON.stringify(data.encodedToken))
+        localStorage.setItem("user",  JSON.stringify({ _id : data.createdUser._id, email : data.createdUser.email, firstName : data.createdUser.firstName, lastName : data.createdUser.lastName, password : data.createdUser.password}) )
+
+     } catch (error) {
+      console.log({error})
+     }
+    };
+
+
     return(
-        <authContext.Provider value={{login}}>
+        <authContext.Provider value={{login, signup}}>
             {children}
         </authContext.Provider>
     )
 }
-
 export { AuthProvider, useAuth }
