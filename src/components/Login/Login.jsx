@@ -21,10 +21,10 @@ const Login = () => {
                 <label htmlFor="">Password</label>
                 <input className='form-input' type="password" placeholder='Enter your password' value={password} onChange={ e => setPassword(e.target.value)}/>
 
-                <button className='form-btn' onClick={(e) =>  login(e,email,password)}> Login</button>
+                <button className='form-btn btn-hover' onClick={(e) =>  login(e,email,password)}> Login</button>
             </form>
 
-            <button onClick={() => {setEmail("adarshbalika@gmail.com"); setPassword("adarshBalika123")}}>Test credentials</button>
+            <button className='form-btn btn-hover' onClick={() => {setEmail("adarshbalika@gmail.com"); setPassword("adarshBalika123")}}>Test credentials</button>
   
             <div className='login-desc'>Or</div>
             <div className='login-desc'>New user?</div>

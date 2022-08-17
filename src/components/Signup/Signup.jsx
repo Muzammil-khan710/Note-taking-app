@@ -30,7 +30,7 @@ const Signup = () => {
                 <label htmlFor="">Password</label>
                 <input className='form-input' type="password" placeholder='Enter your password'  onChange={(e) => setNewUser({ ...newuser, password : e.target.value})}/>
 
-                <button className='form-btn' onClick={(e) => signup(e, newuser) }>Sign up</button>
+                <button className='form-btn btn-hover' onClick={(e) => signup(e, newuser) }>Sign up</button>
             </form>
 
             <div className='login-desc'>Or</div>

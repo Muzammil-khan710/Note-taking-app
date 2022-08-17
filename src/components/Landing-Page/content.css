@@ -1,6 +1,6 @@
 :root {
-    --light--green: #aff;
-    --dark--green: #055;
+    --dark--green: #174400;
+    --dark--green-two : #1c5500
 }
 
 .content-container {
@@ -30,11 +30,16 @@
     margin: 3rem;
     border-radius: 10px;
     font-size: 1.2rem;
-    background-color: var(--light--green);
-    border: 2px solid var(--dark--green);
+    background-color: var(--light-green-one);
+    border: 2px solid var(--green-two);
     text-decoration: none;
 }
 
 .link {
     text-decoration: none;
+    color: var(--dark--green);
+}
+
+.bb-2 {
+    border-bottom: 2px solid var(--dark--green);
 }
