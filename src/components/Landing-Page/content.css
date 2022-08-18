@@ -43,3 +43,7 @@
 .bb-2 {
     border-bottom: 2px solid var(--dark--green);
 }
+
+.l-hvr:hover {
+    color: var(--green-one);
+}
