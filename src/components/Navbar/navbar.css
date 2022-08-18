@@ -10,3 +10,7 @@
     align-items: center;
     margin: 2rem 2rem;
 }
+
+.nav-link {
+    color: var(--dark--green-two);
+}
