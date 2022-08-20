@@ -7,7 +7,7 @@ const useNote = () => useContext(NoteContext)
 
 const NoteProvider = ({children}) => {
 
-    const [showModal, setShowModal] = useState(true)
+    const [showModal, setShowModal] = useState(false)
 
     const [notes, setNotes] = useState([])
 
