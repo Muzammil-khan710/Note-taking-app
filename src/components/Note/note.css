@@ -4,6 +4,7 @@
     --light-pink: #ffc0cb;
     --light-purple: #ddd6f3;
     --light-orange: #fad6c4;
+    --modal-color: #f7f7f7;
 }
 
 .note-editor {
@@ -14,7 +15,8 @@
     border: 1px solid black;
     border-radius: 8px;    
     padding: 1rem;
-    background-color: #f7f7f7;
+    background-color: var(--modal-color);
+    position: absolute;
 }
 
 .note-title {
@@ -42,4 +44,47 @@
     padding: 5px;
     border: 1px solid;
     border-radius: 5px;
+}
+
+.note-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid ;
+}
+
+.note-btn {
+    padding: 1rem;
+    width: 10rem;
+    background-color: var(--light-green-one);
+    border-radius: 5px;
+}
+
+.note-btn:hover {
+    background-color: var(--green-one);
+}
+
+.nc-title {
+    font-size: 1.5rem;
+}
+
+.nc-tags {
+    font: 1rem;
+}
+
+.nc-priority {
+    margin-left: 5rem;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: darkgrey;
+}
+
+.note-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
 }

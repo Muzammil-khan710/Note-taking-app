@@ -26,13 +26,18 @@
 
 .content-btn {
     width: 11rem;
-    height: 3rem;
     margin: 3rem;
     border-radius: 10px;
     font-size: 1.2rem;
     background-color: var(--light-green-one);
     border: 2px solid var(--green-two);
     text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+}
+
+.content-btn:hover {
+    background-color: var(--green-two);
 }
 
 .link {
