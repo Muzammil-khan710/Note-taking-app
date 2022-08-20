@@ -4,6 +4,7 @@
     --light-pink: #ffc0cb;
     --light-purple: #ddd6f3;
     --light-orange: #fad6c4;
+    --modal-color: #f7f7f7;
 }
 
 .note-editor {
@@ -14,7 +15,7 @@
     border: 1px solid black;
     border-radius: 8px;    
     padding: 1rem;
-    background-color: #f7f7f7;
+    background-color: var(--modal-color);
     position: absolute;
 }
 
