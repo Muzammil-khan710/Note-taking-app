@@ -4,6 +4,7 @@ import { ColorTraySvg } from '../../utils/SVG/Svg'
 import "./note.css"
 import { useNote } from '../../Context/NoteContext'
 import { useArchive } from '../../Context/ArchiveContext'
+import { ArchiveIcon } from './../../utils/SVG/Svg';
 
 const Note = () => {
 
@@ -28,7 +29,9 @@ const Note = () => {
                     <div className='nc-tags'>tag : {tags} <span className='nc-priority'> priority : {priority} </span></div>
                     <div dangerouslySetInnerHTML={{ __html: description }}/>
                     <div>{date}</div>
-                    <button onClick={() => addToArchive(notes, _id)}>Add to Archive</button>
+                    <div className='note-b-cnt'>
+                        <button onClick={() => addToArchive(notes, _id)}><ArchiveIcon/></button>
+                    </div>
                 </div>
             )
         })}

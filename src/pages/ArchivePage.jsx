@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar } from '../components'
 import { Sidebar } from '../components/Sidebar/Sidebar'
 import { useArchive } from '../Context/ArchiveContext'
+import { UnArchiveIcon } from '../utils/SVG/Svg'
 
 const ArchivePage = () => {
     
@@ -21,7 +22,11 @@ const ArchivePage = () => {
                             <div className='nc-tags'>tag : {tags} <span className='nc-priority'> priority : {priority} </span></div>
                             <div dangerouslySetInnerHTML={{ __html: description }}/>
                             <div>{date}</div>
-                            <button onClick={() => restoreArchived(_id)}>Restore</button>
+                            <div className='note-b-cnt'>
+                                <button className='btn' onClick={() => restoreArchived(_id)}><UnArchiveIcon/></button>
+                                <button className='btn' onClick={() => restoreArchived(_id)}><UnArchiveIcon/></button>
+                                <button className='btn' onClick={() => restoreArchived(_id)}><UnArchiveIcon/></button>
+                            </div>
                         </div>
                     )
                 })}
