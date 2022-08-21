@@ -45,7 +45,7 @@ const ArchiveProvider = ({children}) => {
             setNotes(data.notes)
             setArchiveNote(data.archives)
         } catch (error) {
-            
+            console.log({error})
         }
     }
 
