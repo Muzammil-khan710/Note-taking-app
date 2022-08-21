@@ -7,6 +7,10 @@ const useNote = () => useContext(NoteContext)
 
 const NoteProvider = ({children}) => {
 
+  const initialBgColor = '#f7f7f7'
+
+  const [bgColor, setBgColor] = useState(initialBgColor)
+
     const [showModal, setShowModal] = useState(false)
 
     const [notes, setNotes] = useState([])
@@ -48,7 +52,7 @@ const NoteProvider = ({children}) => {
       };
 
     return(
-        <NoteContext.Provider value={{showModal,setShowModal,  addNotes, notes, noteContent, setNoteContent}}>
+        <NoteContext.Provider value={{showModal,setShowModal,  addNotes, notes, setNotes, noteContent, setNoteContent, bgColor, setBgColor, initialBgColor}}>
             {children}
         </NoteContext.Provider>
     )

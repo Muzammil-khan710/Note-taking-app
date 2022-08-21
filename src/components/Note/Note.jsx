@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import JoditEditor from "jodit-react"
-import { ColorTraySvg } from '../../utils/SVG/Svg'
+import { ColorTraySvg, EditIcon } from '../../utils/SVG/Svg'
 import "./note.css"
 import { useNote } from '../../Context/NoteContext'
+import { useArchive } from '../../Context/ArchiveContext'
+import { ArchiveIcon, DeleteIcon } from './../../utils/SVG/Svg';
 
 const Note = () => {
-    const initialBgColor = '#f7f7f7'
 
-    const [bgColor, setBgColor] = useState(initialBgColor)
+    const {addToArchive} = useArchive()
 
-    const { showModal, setShowModal,  notes, addNotes,  noteContent, setNoteContent } = useNote()
+    const { showModal, setShowModal,  notes, addNotes,  noteContent, setNoteContent, bgColor, setBgColor, initialBgColor } = useNote()
 
     const presentDate = new Date();
     const date = presentDate.toLocaleString();
@@ -28,6 +29,11 @@ const Note = () => {
                     <div className='nc-tags'>tag : {tags} <span className='nc-priority'> priority : {priority} </span></div>
                     <div dangerouslySetInnerHTML={{ __html: description }}/>
                     <div>{date}</div>
+                    <div className='note-b-cnt'>
+                        <button className='btn bg-grey'><EditIcon/></button>
+                        <button className='btn bg-grey' onClick={() => addToArchive(notes, _id)}><ArchiveIcon/></button>
+                        <button className='btn bg-grey'><DeleteIcon/></button>
+                    </div>
                 </div>
             )
         })}
