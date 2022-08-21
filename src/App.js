@@ -1,4 +1,4 @@
-import { LandingPage, HomePage, LoginPage, SignupPage } from "./pages";
+import { LandingPage, HomePage, LoginPage, SignupPage, ArchivePage } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Authroute, Privateroute } from "./components";
 
@@ -15,6 +15,7 @@ function App() {
 
         <Route element={<Privateroute/>}>
           <Route path="/home" element={<HomePage/>} />
+          <Route path="/archive" element={<ArchivePage/>}/>
         </Route>
       </Routes>  
    </>

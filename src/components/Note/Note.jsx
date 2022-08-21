@@ -3,13 +3,13 @@ import JoditEditor from "jodit-react"
 import { ColorTraySvg } from '../../utils/SVG/Svg'
 import "./note.css"
 import { useNote } from '../../Context/NoteContext'
+import { useArchive } from '../../Context/ArchiveContext'
 
 const Note = () => {
-    const initialBgColor = '#f7f7f7'
 
-    const [bgColor, setBgColor] = useState(initialBgColor)
+    const {addToArchive} = useArchive()
 
-    const { showModal, setShowModal,  notes, addNotes,  noteContent, setNoteContent } = useNote()
+    const { showModal, setShowModal,  notes, addNotes,  noteContent, setNoteContent, bgColor, setBgColor, initialBgColor } = useNote()
 
     const presentDate = new Date();
     const date = presentDate.toLocaleString();
@@ -28,6 +28,7 @@ const Note = () => {
                     <div className='nc-tags'>tag : {tags} <span className='nc-priority'> priority : {priority} </span></div>
                     <div dangerouslySetInnerHTML={{ __html: description }}/>
                     <div>{date}</div>
+                    <button onClick={() => addToArchive(notes, _id)}>Add to Archive</button>
                 </div>
             )
         })}
