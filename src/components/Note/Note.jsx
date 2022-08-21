@@ -5,10 +5,13 @@ import "./note.css"
 import { useNote } from '../../Context/NoteContext'
 import { useArchive } from '../../Context/ArchiveContext'
 import { ArchiveIcon, DeleteIcon } from './../../utils/SVG/Svg';
+import { useDelete } from '../../Context/DeleteContext'
 
 const Note = () => {
 
     const {addToArchive} = useArchive()
+
+    const { addToTrash } = useDelete()
 
     const { showModal, setShowModal,  notes, addNotes,  noteContent, setNoteContent, bgColor, setBgColor, initialBgColor } = useNote()
 
@@ -32,7 +35,7 @@ const Note = () => {
                     <div className='note-b-cnt'>
                         <button className='btn bg-grey'><EditIcon/></button>
                         <button className='btn bg-grey' onClick={() => addToArchive(notes, _id)}><ArchiveIcon/></button>
-                        <button className='btn bg-grey'><DeleteIcon/></button>
+                        <button className='btn bg-grey' onClick={() => addToTrash(notes, _id)}><DeleteIcon/></button>
                     </div>
                 </div>
             )

@@ -1,22 +1,20 @@
 import React from 'react'
 import { Navbar } from '../components'
 import { Sidebar } from '../components/Sidebar/Sidebar'
-import { useArchive } from '../Context/ArchiveContext'
-import { UnArchiveIcon, DeleteIcon } from '../utils/SVG/Svg'
+import { useDelete } from '../Context/DeleteContext'
+import { DeleteIcon, RestoreIcon } from './../utils/SVG/Svg';
 
+const TrashPage = () => {
 
-const ArchivePage = () => {
-    
-    const { archiveNote, restoreArchived, removeArchive  } = useArchive()
+    const { trashNote, restoreFromTrash, deleteFromTrash } = useDelete()
 
-    return (
-
+  return (
     <div>
         <Navbar/>
         <div className='pg-cnt'>
-        <Sidebar/>
+            <Sidebar/>
             <div className='note-container'>
-                {archiveNote.map(({_id, title, description, priority, tags, date, bgColor}) => {
+                {trashNote.map(({_id, title, description, priority, tags, date, bgColor}) => {
                     return(
                         <div className='note-card' style={{backgroundColor : bgColor}}  key={_id}>
                             <div className='nc-title'>{title}</div>
@@ -24,8 +22,8 @@ const ArchivePage = () => {
                             <div dangerouslySetInnerHTML={{ __html: description }}/>
                             <div>{date}</div>
                             <div className='note-b-cnt'>
-                                <button className='btn bg-grey' onClick={() => restoreArchived(_id)}><UnArchiveIcon/></button>
-                                <button className='btn bg-grey' onClick={() => removeArchive(_id)}><DeleteIcon/></button>
+                                <button className='btn bg-grey' onClick={() => restoreFromTrash(_id)}><RestoreIcon/></button>
+                                <button className='btn bg-grey' onClick={() => deleteFromTrash(_id)}><DeleteIcon/></button>
                             </div>
                         </div>
                     )
@@ -36,4 +34,4 @@ const ArchivePage = () => {
   )
 }
 
-export { ArchivePage }
+export { TrashPage }
