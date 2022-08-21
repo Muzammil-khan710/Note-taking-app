@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import JoditEditor from "jodit-react"
-import { ColorTraySvg } from '../../utils/SVG/Svg'
+import { ColorTraySvg, EditIcon } from '../../utils/SVG/Svg'
 import "./note.css"
 import { useNote } from '../../Context/NoteContext'
 import { useArchive } from '../../Context/ArchiveContext'
-import { ArchiveIcon } from './../../utils/SVG/Svg';
+import { ArchiveIcon, DeleteIcon } from './../../utils/SVG/Svg';
 
 const Note = () => {
 
@@ -30,7 +30,9 @@ const Note = () => {
                     <div dangerouslySetInnerHTML={{ __html: description }}/>
                     <div>{date}</div>
                     <div className='note-b-cnt'>
-                        <button onClick={() => addToArchive(notes, _id)}><ArchiveIcon/></button>
+                        <button className='btn bg-grey'><EditIcon/></button>
+                        <button className='btn bg-grey' onClick={() => addToArchive(notes, _id)}><ArchiveIcon/></button>
+                        <button className='btn bg-grey'><DeleteIcon/></button>
                     </div>
                 </div>
             )

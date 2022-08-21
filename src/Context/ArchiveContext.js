@@ -49,9 +49,24 @@ const ArchiveProvider = ({children}) => {
         }
     }
 
+    const removeArchive = async (noteId) => {
+        const encodedToken = localStorage.getItem("token")
+        const config = {
+            headers : {
+                authorization : encodedToken
+            }
+        }
+
+        try {
+            const {data} = await axios.delete(`api/archives/delete/${noteId}`, config)
+            setArchiveNote(data.archives)
+        } catch (error) {
+            console.log({error})
+        }
+    }
 
     return(
-        <ArchiveContext.Provider value={{archiveNote, setArchiveNote, addToArchive, restoreArchived}}>
+        <ArchiveContext.Provider value={{archiveNote, setArchiveNote, addToArchive, restoreArchived, removeArchive}}>
             {children}
         </ArchiveContext.Provider>
     )

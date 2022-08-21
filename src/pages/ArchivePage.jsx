@@ -2,11 +2,12 @@ import React from 'react'
 import { Navbar } from '../components'
 import { Sidebar } from '../components/Sidebar/Sidebar'
 import { useArchive } from '../Context/ArchiveContext'
-import { UnArchiveIcon } from '../utils/SVG/Svg'
+import { UnArchiveIcon, DeleteIcon } from '../utils/SVG/Svg'
+
 
 const ArchivePage = () => {
     
-    const { archiveNote, restoreArchived  } = useArchive()
+    const { archiveNote, restoreArchived, removeArchive  } = useArchive()
 
     return (
 
@@ -23,9 +24,9 @@ const ArchivePage = () => {
                             <div dangerouslySetInnerHTML={{ __html: description }}/>
                             <div>{date}</div>
                             <div className='note-b-cnt'>
-                                <button className='btn' onClick={() => restoreArchived(_id)}><UnArchiveIcon/></button>
-                                <button className='btn' onClick={() => restoreArchived(_id)}><UnArchiveIcon/></button>
-                                <button className='btn' onClick={() => restoreArchived(_id)}><UnArchiveIcon/></button>
+                                <button className='btn bg-grey' onClick={() => restoreArchived(_id)}><UnArchiveIcon/></button>
+                                <button className='btn bg-grey' onClick={() => removeArchive(_id)}><DeleteIcon/></button>
+                                <button className='btn bg-grey' onClick={() => restoreArchived(_id)}><UnArchiveIcon/></button>
                             </div>
                         </div>
                     )

@@ -25,3 +25,17 @@ export function UnArchiveIcon(props) {
   )
 }
 
+
+
+export function DeleteIcon(props) {
+  return (
+    <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M12 4c-4.419 0-8 3.582-8 8s3.581 8 8 8s8-3.582 8-8s-3.581-8-8-8zm3.707 10.293a.999.999 0 1 1-1.414 1.414L12 13.414l-2.293 2.293a.997.997 0 0 1-1.414 0a.999.999 0 0 1 0-1.414L10.586 12L8.293 9.707a.999.999 0 1 1 1.414-1.414L12 10.586l2.293-2.293a.999.999 0 1 1 1.414 1.414L13.414 12l2.293 2.293z"></path></svg>
+  )
+}
+
+
+export function EditIcon(props) {
+  return (
+    <svg width="1.5em" height="1.5em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="m19.3 8.925l-4.25-4.2l1.4-1.4q.575-.575 1.413-.575q.837 0 1.412.575l1.4 1.4q.575.575.6 1.388q.025.812-.55 1.387ZM17.85 10.4L7.25 21H3v-4.25l10.6-10.6Z"></path></svg>
+  )
+}
