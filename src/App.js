@@ -1,6 +1,7 @@
 import { LandingPage, HomePage, LoginPage, SignupPage, ArchivePage } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import { Authroute, Privateroute } from "./components";
+import { TrashPage } from "./pages/TrashPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route element={<Privateroute/>}>
           <Route path="/home" element={<HomePage/>} />
           <Route path="/archive" element={<ArchivePage/>}/>
+          <Route path="/trash" element={<TrashPage/>}/>
         </Route>
       </Routes>  
    </>
