@@ -13,7 +13,7 @@ const Note = () => {
 
     const { addToTrash } = useDelete()
 
-    const { showModal, setShowModal,  notes, addNotes,  noteContent, setNoteContent, bgColor, setBgColor, initialBgColor } = useNote()
+    const { showModal, setShowModal,  notes, addNotes,  noteContent, setNoteContent, bgColor, setBgColor, initialBgColor, editNote, setEditNote, editModal, setEditModal, saveEditNote, editNoteHandler } = useNote()
 
     const presentDate = new Date();
     const date = presentDate.toLocaleString();
@@ -33,7 +33,7 @@ const Note = () => {
                     <div dangerouslySetInnerHTML={{ __html: description }}/>
                     <div>{date}</div>
                     <div className='note-b-cnt'>
-                        <button className='btn bg-grey'><EditIcon/></button>
+                        <button className='btn bg-grey' onClick={() => { editNoteHandler(_id); setEditModal(!editModal) }}><EditIcon/></button>
                         <button className='btn bg-grey' onClick={() => addToArchive(notes, _id)}><ArchiveIcon/></button>
                         <button className='btn bg-grey' onClick={() => addToTrash(notes, _id)}><DeleteIcon/></button>
                     </div>
@@ -41,7 +41,7 @@ const Note = () => {
             )
         })}
 
-        <button className='note-btn' onClick={() => { setShowModal(!showModal) ; setBgColor(initialBgColor)} }>Add a Note</button>
+        <button className='note-btn' disabled={editModal} onClick={() => { setShowModal(!showModal) ; setBgColor(initialBgColor)} }>Add a Note</button>
 
         {showModal &&
             <div className='note-editor' style={{backgroundColor: bgColor}}>
@@ -83,6 +83,48 @@ const Note = () => {
                 </div>
             </div>
         }
+
+        {editModal &&
+            <div className='note-editor' style={{backgroundColor: bgColor}}>
+                <input type="text" className='note-title' placeholder="Title" value={editNote.title} onChange={(e) => { console.log(editNote.title); setEditNote((prev) => ({ ...prev, title: e.target.value})) } }/>
+                <JoditEditor value={editNote.description} onChange={(e) => { setEditNote((prev) => ({ ...prev, description : e})) } }/>
+                <div className='btn-container'>
+
+                <button className='btn'><ColorTraySvg/>
+                <select className='select'value={editNote.bgColor}  onChange={(e) =>  {setBgColor(e.target.value) ; setEditNote((prev) => ({ ...prev, bgColor: e.target.value}))}}>
+                    <option hidden value="">Choose color</option>
+                    <option value="#89ebed">blue</option>
+                    <option value="#fff8c6">yellow</option>
+                    <option value="#ffc0cb">pink</option>
+                    <option value="#ddd6f3">purple</option>
+                    <option value="#fad6c4">orange</option>
+                </select>
+                </button>
+
+                <select className='select' name="" id="" value={editNote.tags} onChange={(e) => { setEditNote((prev) => ({ ...prev, tags: e.target.value}))}}>
+                    <option hidden>Choose Tag</option>
+                    <option value="Work">Work</option>
+                    <option value="Gym">Gym</option>
+                    <option value="Health">Health</option>
+                    <option value="Teams">Teams</option>
+                    <option value="Chores">Chores</option>
+                    <option value="Creativity">Creativity</option>
+                </select>
+
+                <select className='select' name="" id="" value={editNote.priority} onChange={(e) => { setEditNote((prev) => ({ ...prev, priority: e.target.value}))}}>
+                    <option hidden>Choose Priority</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <button className='btn' onClick={() => {  saveEditNote(editNote); setEditModal(!editModal)}}>Update</button>
+
+                <button onClick={() => setEditModal(!editModal)}>Cancel</button>
+                </div>
+            </div>
+        }
+
     </div>
   )
 }

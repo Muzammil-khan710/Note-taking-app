@@ -13,6 +13,8 @@ const NoteProvider = ({children}) => {
 
     const [showModal, setShowModal] = useState(false)
 
+    const [editModal, setEditModal] = useState(false)
+
     const [notes, setNotes] = useState([])
 
     const initialState = {
@@ -26,6 +28,17 @@ const NoteProvider = ({children}) => {
 
     const [noteContent, setNoteContent] = useState(initialState)
 
+    const [editNote, setEditNote] = useState(initialState)
+
+    const editNoteHandler = (_id) => {
+      const obj = notes.find((note) => note._id === _id);
+      setEditNote(obj)
+    }
+
+    const saveEditNote = (editNote) => {
+      updateNote(editNote);
+    };
+
     useEffect(() => {
         (async () => {
           const encodedToken = localStorage.getItem("token");
@@ -35,27 +48,44 @@ const NoteProvider = ({children}) => {
         })();
       }, []);
     
-      const addNotes = async (note) => {
-        const encodedToken = localStorage.getItem("token");
-        const config = {
-          headers: {
-            authorization: encodedToken,
-          },
-        };
-        try {
-          const {data} = await axios.post("/api/notes", { note }, config);
-          setNotes(data.notes);
-          setNoteContent(initialState);
-        } catch (e) {
-            console.log({e})
-        }
+    const addNotes = async (note) => {
+      const encodedToken = localStorage.getItem("token");
+      const config = {
+        headers: {
+          authorization: encodedToken,
+        },
       };
+      try {
+        const {data} = await axios.post("/api/notes", { note }, config);
+        setNotes(data.notes);
+        setNoteContent(initialState);
+      } catch (e) {
+          console.log({e})
+      }
+    };
 
-    return(
-        <NoteContext.Provider value={{showModal,setShowModal,  addNotes, notes, setNotes, noteContent, setNoteContent, bgColor, setBgColor, initialBgColor}}>
-            {children}
-        </NoteContext.Provider>
-    )
+      
+    const updateNote = async (editNote) => {
+      const encodedToken = localStorage.getItem("token");
+      const config = {
+        headers: {
+          authorization: encodedToken,
+        },
+      };  
+      try {
+        const {data} = await axios.post(`/api/notes/${editNote._id}`, { note : editNote }, config);
+        setNotes(data.notes);
+        console.log(data)
+      } catch (e) {
+          console.log({e})
+      }
+    };
+
+  return(
+      <NoteContext.Provider value={{showModal,setShowModal,  addNotes, notes, setNotes, noteContent, setNoteContent, bgColor, setBgColor, initialBgColor,  updateNote, editNoteHandler, saveEditNote, editModal, setEditModal, editNote, setEditNote}}>
+          {children}
+      </NoteContext.Provider>
+  )
 }
 
 export {NoteProvider, useNote}
