@@ -2,15 +2,14 @@ import React, {useState, useEffect} from 'react'
 import JoditEditor from "jodit-react"
 import { ColorTraySvg, EditIcon } from '../../utils/SVG/Svg'
 import "./note.css"
-import { useNote } from '../../Context/NoteContext'
-import { useArchive } from '../../Context/ArchiveContext'
 import { ArchiveIcon, DeleteIcon } from './../../utils/SVG/Svg';
-import { useDelete } from '../../Context/DeleteContext'
+import { useArchive, useDelete, useNote } from '../../Context';
 
 const Note = () => {
 
     const {addToArchive} = useArchive()
 
+    useArchive
     const { addToTrash } = useDelete()
 
     const { showModal, setShowModal,  notes, addNotes,  noteContent, setNoteContent, bgColor, setBgColor, initialBgColor, editNote, setEditNote, editModal, setEditModal, saveEditNote, editNoteHandler } = useNote()
