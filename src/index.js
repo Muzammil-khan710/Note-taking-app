@@ -4,11 +4,8 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom"
-import { AuthProvider } from "./Context/AuthContext";
-import { NoteProvider } from "./Context/NoteContext";
-import { ArchiveProvider } from "./Context/ArchiveContext";
-import { DeleteProvider } from "./Context/DeleteContext";
- 
+import { AuthProvider, NoteProvider,  DeleteProvider, ArchiveProvider } from "./Context";
+
 // Call make Server
 makeServer();
 
