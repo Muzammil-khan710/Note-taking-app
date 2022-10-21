@@ -14,3 +14,19 @@
 .nav-link {
     color: var(--dark--green-two);
 }
+
+.sh-link {
+    display: none;
+    gap: 2rem;
+}
+
+@media screen and (max-width : 650px) {
+
+    .navbar {
+        font-size: 1.2rem;
+    }
+
+    .sh-link {
+        display: flex;
+    }
+}

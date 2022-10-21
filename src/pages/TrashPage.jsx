@@ -14,6 +14,7 @@ const TrashPage = () => {
         <div className='pg-cnt'>
             <Sidebar/>
             <div className='note-container'>
+                {trashNote.length === 0 && <div className='' >Trash is empty</div>}
                 {trashNote.map(({_id, title, description, priority, tags, date, bgColor}) => {
                     return(
                         <div className='note-card' style={{backgroundColor : bgColor}}  key={_id}>
