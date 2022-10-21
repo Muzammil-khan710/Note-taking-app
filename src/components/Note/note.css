@@ -93,3 +93,10 @@
     gap: 1rem;
     align-items: flex-start;
 }
+
+@media screen and (max-width: 650px) {
+    .note-editor {
+        position: relative;
+        margin: 5rem auto;
+    }
+}

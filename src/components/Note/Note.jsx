@@ -50,7 +50,7 @@ const Note = () => {
 
                 <button className='btn'><ColorTraySvg/>
                 <select className='select' onChange={(e) =>  {setBgColor(e.target.value) ; setNoteContent((prev) => ({ ...prev, bgColor: e.target.value}))}}>
-                    <option hidden value="">Choose color</option>
+                    <option hidden value="">Color</option>
                     <option value="#89ebed">blue</option>
                     <option value="#fff8c6">yellow</option>
                     <option value="#ffc0cb">pink</option>
@@ -60,7 +60,7 @@ const Note = () => {
                 </button>
 
                 <select className='select' name="" id="" onChange={(e) => { setNoteContent((prev) => ({ ...prev, tags: e.target.value}))}}>
-                    <option hidden>Choose Tag</option>
+                    <option hidden>Tag</option>
                     <option value="Work">Work</option>
                     <option value="Gym">Gym</option>
                     <option value="Health">Health</option>
@@ -70,7 +70,7 @@ const Note = () => {
                 </select>
 
                 <select className='select' name="" id="" onChange={(e) => { setNoteContent((prev) => ({ ...prev, priority: e.target.value}))}}>
-                    <option hidden>Choose Priority</option>
+                    <option hidden>Priority</option>
                     <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
                     <option value="High">High</option>
@@ -91,7 +91,7 @@ const Note = () => {
 
                 <button className='btn'><ColorTraySvg/>
                 <select className='select'value={editNote.bgColor}  onChange={(e) =>  {setBgColor(e.target.value) ; setEditNote((prev) => ({ ...prev, bgColor: e.target.value}))}}>
-                    <option hidden value="">Choose color</option>
+                    <option hidden value="">color</option>
                     <option value="#89ebed">blue</option>
                     <option value="#fff8c6">yellow</option>
                     <option value="#ffc0cb">pink</option>
@@ -101,7 +101,7 @@ const Note = () => {
                 </button>
 
                 <select className='select' name="" id="" value={editNote.tags} onChange={(e) => { setEditNote((prev) => ({ ...prev, tags: e.target.value}))}}>
-                    <option hidden>Choose Tag</option>
+                    <option hidden>Tag</option>
                     <option value="Work">Work</option>
                     <option value="Gym">Gym</option>
                     <option value="Health">Health</option>
@@ -111,7 +111,7 @@ const Note = () => {
                 </select>
 
                 <select className='select' name="" id="" value={editNote.priority} onChange={(e) => { setEditNote((prev) => ({ ...prev, priority: e.target.value}))}}>
-                    <option hidden>Choose Priority</option>
+                    <option hidden>Priority</option>
                     <option value="Low">Low</option>
                     <option value="Medium">Medium</option>
                     <option value="High">High</option>

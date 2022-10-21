@@ -16,6 +16,7 @@ const ArchivePage = () => {
         <div className='pg-cnt'>
         <Sidebar/>
             <div className='note-container'>
+            {archiveNote.length === 0 && <div className='' >Archive is empty</div>}
                 {archiveNote.map(({_id, title, description, priority, tags, date, bgColor}) => {
                     return(
                         <div className='note-card' style={{backgroundColor : bgColor}}  key={_id}>
