@@ -1,0 +1,64 @@
+:root {
+    --light-green-one: #ccfab1;
+    --green-one: #60ff11;
+    --green-two: #39aa00;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--green-one);
+    border-radius: 5px;
+    width: 20rem;
+    margin: auto;
+    background-color: var(--light-green-one);
+}
+
+.form-container {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 18rem;
+    margin: 0 2rem;
+    padding: 1rem;
+}
+
+.form-input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid var(--green-one);
+    outline: none;
+}
+
+.form-btn {
+    width: 10rem;
+    margin-top: 1rem;
+    align-self: center;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid var(--green-one);
+}
+
+.login-title {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.login-desc {
+    font-size: 1.2rem;
+    margin: 5px;
+}
+
+.login-link {
+    text-decoration: none;
+    color: var(--green-two);
+    border-bottom: 2px solid var(--green-two);
+}
+
+.btn-hover:hover {
+    background-color: var(--green-one);
+}

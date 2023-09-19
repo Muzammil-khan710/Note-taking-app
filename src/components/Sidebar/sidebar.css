@@ -1,0 +1,25 @@
+.side-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 3rem;
+    height: 73vh;
+    width: 3rem;
+    border-right: 2px solid var(--dark--green-two);
+}
+
+.side-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--dark--green-two);
+}   
+
+.side-link:hover {
+    color: var(--green-one);
+}
+
+@media screen and (max-width : 650px) {
+    .side-container {
+        display: none;
+    }
+}

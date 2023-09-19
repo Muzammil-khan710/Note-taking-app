@@ -1,0 +1,32 @@
+.navbar {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 2rem;
+}
+
+.nav-link {
+    color: var(--dark--green-two);
+}
+
+.sh-link {
+    display: none;
+    gap: 2rem;
+}
+
+@media screen and (max-width : 650px) {
+
+    .navbar {
+        font-size: 1.2rem;
+    }
+
+    .sh-link {
+        display: flex;
+    }
+}
